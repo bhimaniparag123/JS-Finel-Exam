@@ -1,0 +1,85 @@
+<!-- Project Objective: Build an Expense Tracker application that supports multiple users. Users can sign up, log in, and manage their own set of expenses privately.
+
+ Project Requirements: 
+
+1. HTML Structure (5 points): - Create HTML files for the expense tracker, login, and signup pages.   - Include input forms for adding expenses, logging in, and signing up. Using given api
+
+2. User Authentication (15 points):    - Implement user signup (signup) and login (login) functionalities.   - Securely store user data, validate required fields during signup.   - Use hashing for password storage.   - Allow users to log in and manage their own set of expenses.
+
+3. Adding Expenses (5 points):    - Implement addExpense to allow users to add new expenses.   - Validate required fields before adding an expense.   - Include input fields for expense name, amount, date, and category.
+
+4. Displaying Expenses (5 points):    - Display only expenses associated with the logged-in user.   - Display each expense with name, amount, date, and category.
+
+5. API Integration (10 points):    - Utilize an API for user and expense data.   - Fetch and send data to the API for user authentication and expense management.
+
+6. Editing and Deleting Expenses (5 points):    - Modify editExpense and deleteExpense to allow users to modify/delete their expenses only.
+
+7. Sorting and Filtering (5 points):    - Add sorting by date (ascending and descending) for the logged-in user's expenses.   - Implement a basic filter feature for expense categories.
+
+8. User Interaction (5 points):    - Clear input fields after adding a new expense.   - Implement a visually appealing user interface (UI) with proper error handling. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expence Tracker System</title>
+  <link rel="stylesheet" href="Css/style.Css">
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <h1>Expence Tracker System</h1>
+      <div class="tracker">
+        <div class="budget-section">
+          <h2>Add Income</h2>
+          <label for="budgetInput">Expence:</label>
+          <input type="number" id="budgetInput" placeholder="Enter your budget">
+          <button id="addBudget">Add Expence</button>
+        </div>
+        <div class="expense-section">
+          <h2>Add/Edit Expense</h2>
+          <label for="expenseTitle">Expense Title:</label>
+          <input type="text" id="expenseTitle" placeholder="Enter expense title">
+          <label for="expenseAmount">Amount:</label>
+          <input type="number" id="expenseAmount" placeholder="Enter expense amount">
+          <button id="addExpense">Add Expense</button>
+          <button id="editExpense" style="display: none;">Save Changes</button>
+          <button id="resetAll" class="reset-btn">Reset All</button>
+        </div>
+      </div>
+      <div class="summary">
+        <div>
+          <h3>Total Budget</h3>
+          <p id="totalBudget">$0.00</p>
+        </div>
+        <div>
+          <h3>Total Expenses</h3>
+          <p id="totalExpenses">$0.00</p>
+        </div>
+        <div>
+          <h3>Budget Left</h3>
+          <p id="budgetLeft">$0.00</p>
+        </div>
+      </div>
+      <div class="expense-history">
+        <h3>Expense History:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Expense Name</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="expenseTable">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <script src="js/Login.js"></script>
+</body>
+
+</html>
